@@ -37,7 +37,7 @@ public class Data
 		String str = "";
 		for(int i = 0; i < this.data.size(); i++)
 		{
-			str = str + (i+1) + " " + getGain(0) + " " + getGain(1) + '\n';
+			str = str + (i+1) + " " + getGain(i) + " " + getWeight(i) + '\n';
 		}
 		return str;
 	}

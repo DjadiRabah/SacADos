@@ -33,7 +33,7 @@ public class Algorithm
 		double bestGain = 0.0;
 		double bestWeight = 0.0;
 		
-		for(int i = 0; i < this.permutations.size(); i++)
+		for(int i = 1; i < this.permutations.size(); i++)
 		{
 			double currentWeight = 0.0;
 			double currentGain = 0.0;
