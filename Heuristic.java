@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Heuristic 
 {
@@ -36,25 +37,20 @@ public class Heuristic
 			ratios[i][0] = i;
 			ratios[i][1] = data.getGain(i) / data.getWeight(i);
 		}
-		System.out.println();
 		this.insertionSort(ratios);
 		
 		double currentWeight = 0.0;
-		int currentIndex = 0;
 		
-		while(currentWeight < data.getMaxWeight())
+		for(int i = 0; i < ratios.length; i++)
 		{
-			if ((currentWeight + data.getWeight((int)ratios[currentIndex][0])) < data.getMaxWeight())
+			if ((currentWeight + data.getWeight((int)ratios[i][0])) < data.getMaxWeight())
 			{
-				currentWeight += data.getWeight((int)ratios[currentIndex][0]);
-				solution.add((int)ratios[currentIndex][0] + 1);
-				currentIndex++;
-			}
-			else
-			{
-				break;
+				currentWeight += data.getWeight((int)ratios[i][0]);
+				solution.add((int)ratios[i][0] + 1);
 			}
 		}	
+		Collections.sort(solution);
+
 		return solution;
 	}
 
