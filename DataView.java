@@ -38,7 +38,7 @@ public class DataView extends JPanel
 		{
 			this.dataPanel.add(this.getLabel(this.data.getGain(i) + "", Color.WHITE));
 		}
-		this.dataPanel.add(this.getLabel("Poids", Color.GRAY));
+		this.dataPanel.add(this.getLabel("Masses", Color.GRAY));
 		for(int i = 0; i < this.data.getSize(); i++)
 		{
 			this.dataPanel.add(this.getLabel(this.data.getWeight(i) + "", Color.WHITE));
