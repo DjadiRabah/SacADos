@@ -24,12 +24,12 @@ public class Algorithm
 		}
 	}
 	
-	public int[] getSolution(Data data, double maxWeight)
+	public ArrayList<Integer> getSolution(Data data, double maxWeight)
 	{
 		int[] currentPermutations = new int[data.getSize()];
 		this.setPermutations(currentPermutations, 0);
 		
-		int[] solution = new int[data.getSize()];
+		int[] solution1 = new int[data.getSize()];
 		double bestGain = 0.0;
 		double bestWeight = 0.0;
 		
@@ -52,7 +52,7 @@ public class Algorithm
 				{
 					bestGain = currentGain;
 					bestWeight = currentWeight;
-					solution = p.clone();
+					solution1 = p.clone();
 				}
 				else if(currentGain == bestGain)
 				{
@@ -60,11 +60,18 @@ public class Algorithm
 					{
 						bestGain = currentGain;
 						bestWeight = currentWeight;
-						solution = p.clone();
+						solution1 = p.clone();
 					}
 				}
 			}
 		}
-		return solution;
+		
+		ArrayList<Integer> solution2 = new ArrayList<Integer>();
+		for(int i = 0; i < solution1.length; i++)
+		{
+			if(solution1[i] == 1)
+				solution2.add(Integer.valueOf(i+1));
+		}
+		return solution2;
 	}
 }
