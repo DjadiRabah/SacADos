@@ -20,7 +20,7 @@ public class ResultView extends JPanel
 		String str = new String();
 		for(int i = 0; i < solution.size(); i++)
 		{
-			str = str + solution.get(i).intValue() + " ";
+			str = str + solution.get(i).intValue() + " "; 
 		}
 		str = str + " en " + time / Math.pow(10.0,9.0) + " secondes"; 
 		this.label.setText(str);
