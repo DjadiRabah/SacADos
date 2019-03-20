@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ButtonsListener implements ActionListener
 {
@@ -30,12 +31,18 @@ public class ButtonsListener implements ActionListener
 		else if(event.getActionCommand().equals("Algorithme naif"))
 		{
 			Algorithm alg = new Algorithm();
-			this.resultView.update(alg.getSolution(data, data.getMaxWeight()));
+			long currentTime = System.nanoTime();
+			ArrayList<Integer> solution = alg.getSolution(data, data.getMaxWeight());
+			currentTime = System.nanoTime() - currentTime;
+			this.resultView.update(solution,currentTime);
 		}
 		else if(event.getActionCommand().equals("Heuristique gloutonne"))
 		{
 			Heuristic alg = new Heuristic();
-			this.resultView.update(alg.getSolution(data, data.getMaxWeight()));
+			long currentTime = System.nanoTime();
+			ArrayList<Integer> solution = alg.getSolution(data, data.getMaxWeight());
+			currentTime = System.nanoTime() - currentTime;
+			this.resultView.update(solution,currentTime);
 		}
 	}
 	

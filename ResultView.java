@@ -15,21 +15,21 @@ public class ResultView extends JPanel
 		this.add(this.label);
 	}
 	
-	private void setLabel(ArrayList<Integer> solution)
+	private void setLabel(ArrayList<Integer> solution, long time)
 	{
 		String str = new String();
 		for(int i = 0; i < solution.size(); i++)
 		{
 			str = str + solution.get(i).intValue() + " ";
 		}
+		str = str + " en " + time / Math.pow(10.0,9.0) + " secondes"; 
 		this.label.setText(str);
 	}
 	
-	public void update(ArrayList<Integer> solution)
+	public void update(ArrayList<Integer> solution, long time)
 	{
-		this.setLabel(solution);
+		this.setLabel(solution, time);
 		this.repaint();
 		this.updateUI();
 	}
-
 }
