@@ -10,7 +10,7 @@ public class WeightView extends JPanel
 	{
 		super();
 		this.setLayout(new GridBagLayout());
-		JLabel label = new JLabel("Capacité de l'avion (en tonnes) : " + data.getMaxWeight());
+		JLabel label = new JLabel("Capacite de l'avion (en tonnes) : " + data.getMaxWeight());
 		label.setForeground(Color.RED);
 		this.add(label);
 	}

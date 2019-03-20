@@ -10,7 +10,7 @@ public class Window extends JFrame
 	public Window()
 	{
 		super("TP1");
-		this.setSize(1920,1200);
+		this.setSize(1280,720);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		
